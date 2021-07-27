@@ -1,0 +1,6 @@
+symfony/
+.env
+
+# IDE setting
+## PhpStorm
+.idea
