@@ -1,4 +1,5 @@
 .env
+/bin/extension
 
 # IDE setting
 ## PhpStorm
