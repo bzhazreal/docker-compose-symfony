@@ -1,18 +1,18 @@
 version: '3.9'
 
 services:
-    
+
     db:
         container_name: ${PROJECT_NAME}__postgres
         image: postgres:13.3
         environment:
-            POSTGRES_PASSWORD: ${DB_PASSWORD} 
+            POSTGRES_PASSWORD: ${DB_PASSWORD}
             POSTGRES_USER: ${DB_USER}
             POSTGRES_DB: ${DB_DATABASE}
 
     adminer:
+        container_name: ${PROJECT_NAME}__adminer
         image: adminer
-        restart: always
         environment:
             - ADMINER_DESIGN=pepa-linha
         ports:
@@ -45,7 +45,7 @@ services:
 
     nginx:
         container_name: ${PROJECT_NAME}__nginx
-        build: 
+        build:
             context: ./docker/nginx
             args:
                 NGINX_SYMFONY_SERVER_NAME: ${NGINX_SYMFONY_SERVER_NAME}
