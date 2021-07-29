@@ -27,7 +27,7 @@ check-requirements:
 	bash ./bin/script/requirements.sh
 
 ##
-## setup                    : Setup all project. 
+## setup                    : Setup all project.
 .PHONY: setup
 setup:
 	bash ./bin/script/setup.sh
@@ -54,7 +54,11 @@ stop:
 shell:
 	docker-compose exec $(filter-out $@,$(MAKECMDGOALS)) sh
 
-
+##
+## shell-npm                : Enter in npm container interactive shell
+.PHONY: shell-npm
+shell-npm:
+	docker-compose run npm bash
 
 # -----------------------------------------------------------------------------
 # Symfony installation commands

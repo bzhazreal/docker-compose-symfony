@@ -18,6 +18,14 @@ services:
         ports:
             - 8081:8080
 
+    npm:
+        container_name: ${PROJECT_NAME}__node
+        user: ${UID}:${GID}
+        image: node:16-buster
+        working_dir: /app
+        volumes:
+            - ./symfony:/app:cached
+
     php:
         container_name: ${PROJECT_NAME}__php-fpm
         build:
