@@ -61,6 +61,15 @@ shell-npm:
 	docker-compose run npm bash
 
 # -----------------------------------------------------------------------------
+# Quality tools command
+# -----------------------------------------------------------------------------
+.PHONY: shell-qa
+shell-qa:
+	docker-compose -f docker-compose-quality.yml run --rm phpqa sh
+
+
+
+# -----------------------------------------------------------------------------
 # Symfony installation commands
 # -----------------------------------------------------------------------------
 
@@ -78,3 +87,4 @@ install-symfony:
 .PHONY: install-symfony-full
 install-symfony-full:
 	docker-compose exec php symfony new project --full --dir=. --no-git
+

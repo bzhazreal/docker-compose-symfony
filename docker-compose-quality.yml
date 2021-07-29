@@ -1,0 +1,10 @@
+version: '3.9'
+
+services:
+
+  phpqa:
+    container_name: ${PROJECT_NAME}__phpqa
+    image: jakzal/phpqa:1.59
+    working_dir: /project
+    volumes:
+        - ./symfony:/project:cached
