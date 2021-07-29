@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $(dirname $(realpath $0))/_common.sh
+source $(dirname $(realpath $0))/../_common.sh
 
 # -----------------------------------------------------------------------------
 # Manage .env on project initialization.

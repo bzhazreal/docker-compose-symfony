@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-source $(dirname $(realpath $0))/_common.sh
+source $(dirname $(realpath $0))/../_common.sh
 
 # -----------------------------------------------------------------------------
 # List of required package.
@@ -19,12 +19,12 @@ REQUIRED_PACKAGE=(
 # 1 if command exist
 # -----------------------------------------------------------------------------
 function _command_exist() {
-    
+
     local r=$(command -v "$1")
 
     if [[ -z $r ]]; then
         echo 0
-    else  
+    else
         echo 1
     fi
 
